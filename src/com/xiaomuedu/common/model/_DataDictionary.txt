@@ -1,0 +1,117 @@
+Table: article
+-------------+--------------+------+-----+---------+---------
+ Field       | Type         | Null | Key | Default | Remarks 
+-------------+--------------+------+-----+---------+---------
+ id          | INT(10)      | NO   | PRI |         | 主键      
+ title       | VARCHAR(255) | YES  |     |         |         
+ content     | TEXT(65535)  | YES  |     |         |         
+ publishTime | DATETIME(19) | YES  |     |         |         
+ authorId    | INT(10)      | YES  |     |         |         
+ source      | VARCHAR(255) | YES  |     |         |         
+ updateTime  | DATETIME(19) | YES  |     |         |         
+ category    | INT(10)      | YES  |     |         |         
+ viewCount   | VARCHAR(255) | YES  |     |         |         
+ poster      | VARCHAR(255) | YES  |     |         |         
+-------------+--------------+------+-----+---------+---------
+
+Table: dictionary
+-------+--------------+------+-----+---------+---------
+ Field | Type         | Null | Key | Default | Remarks 
+-------+--------------+------+-----+---------+---------
+ id    | INT(10)      | NO   | PRI |         | 主键      
+ name  | VARCHAR(255) | YES  |     |         |         
+ type  | INT(10)      | YES  |     |         | 类型 行业分类 融资阶段 城市 文章分类
+-------+--------------+------+-----+---------+---------
+
+Table: figure
+------------+--------------+------+-----+---------+---------
+ Field      | Type         | Null | Key | Default | Remarks 
+------------+--------------+------+-----+---------+---------
+ id         | INT(10)      | NO   | PRI |         | 主键      
+ name       | VARCHAR(255) | YES  |     |         |         
+ sex        | VARCHAR(255) | YES  |     |         |         
+ age        | INT(10)      | YES  |     |         |         
+ createTime | DATETIME(19) | YES  |     |         |         
+ avatar     | VARCHAR(255) | YES  |     |         |         
+ phone      | VARCHAR(255) | YES  |     |         |         
+ email      | VARCHAR(255) | YES  |     |         |         
+ content    | TEXT(65535)  | YES  |     |         |         
+------------+--------------+------+-----+---------+---------
+
+Table: figure_project
+-----------+---------+------+-----+---------+---------
+ Field     | Type    | Null | Key | Default | Remarks 
+-----------+---------+------+-----+---------+---------
+ id        | INT(10) | NO   | PRI |         | 主键      
+ figureId  | INT(10) | YES  |     |         | 创业人物    
+ projectId | INT(10) | YES  |     |         | 项目      
+-----------+---------+------+-----+---------+---------
+
+Table: friend_link
+-------+--------------+------+-----+---------+---------
+ Field | Type         | Null | Key | Default | Remarks 
+-------+--------------+------+-----+---------+---------
+ id    | INT(10)      | NO   | PRI |         | 主键      
+ name  | VARCHAR(255) | YES  |     |         | 友情链接 名称 
+ url   | VARCHAR(255) | YES  |     |         | 友情链接地址  
+ rank  | INT(10)      | YES  |     |         | 排序      
+-------+--------------+------+-----+---------+---------
+
+Table: invset_organ
+------------+--------------+------+-----+---------+---------
+ Field      | Type         | Null | Key | Default | Remarks 
+------------+--------------+------+-----+---------+---------
+ id         | INT(10)      | NO   | PRI |         | 主键      
+ name       | VARCHAR(255) | YES  |     |         |         
+ createTime | DATETIME(19) | YES  |     |         |         
+ userId     | INT(10)      | YES  |     |         |         
+ website    | VARCHAR(255) | YES  |     |         |         
+ content    | TEXT(65535)  | YES  |     |         |         
+ logo       | VARCHAR(255) | YES  |     |         |         
+------------+--------------+------+-----+---------+---------
+
+Table: link_dictionary
+--------------+--------------+------+-----+---------+---------
+ Field        | Type         | Null | Key | Default | Remarks 
+--------------+--------------+------+-----+---------+---------
+ id           | INT(10)      | NO   | PRI |         | 主键     
+ linkType     | VARCHAR(255) | YES  |     |         | 关联对象类型  
+ dictionaryId | INT(10)      | YES  |     |         | 字典值ID   
+ linkId       | INT(10)      | YES  |     |         | 关联对象ID  
+--------------+--------------+------+-----+---------+---------
+
+Table: project
+-------------+--------------+------+-----+---------+---------
+ Field       | Type         | Null | Key | Default | Remarks 
+-------------+--------------+------+-----+---------+---------
+ id          | INT(10)      | NO   | PRI |         | 主键      
+ name        | VARCHAR(255) | YES  |     |         | 项目名称    
+ content     | TEXT(65535)  | YES  |     |         | 简介描述    
+ logo        | VARCHAR(255) | YES  |     |         | logo图像地址
+ shortdesc   | VARCHAR(255) | YES  |     |         | 一句话介绍   
+ achievement | TEXT(65535)  | YES  |     |         | 项目成果    
+ superior    | TEXT(65535)  | YES  |     |         | 项目优势    
+ poster      | TEXT(65535)  | YES  |     |         | 海报图片 多张 
+ createTime  | DATETIME(19) | YES  |     |         | 创建时间    
+ userId      | INT(10)      | YES  |     |         | 创建人     
+ cityId      | INT(10)      | YES  |     |         | 城市      
+ stage       | INT(10)      | YES  |     |         | 融资阶段    
+ trade       | INT(10)      | YES  |     |         | 行业 1,2,3
+-------------+--------------+------+-----+---------+---------
+
+Table: user
+------------+--------------+------+-----+---------+---------
+ Field      | Type         | Null | Key | Default | Remarks 
+------------+--------------+------+-----+---------+---------
+ id         | INT(10)      | NO   | PRI |         | 主键      
+ username   | VARCHAR(255) | YES  |     |         | 用户名     
+ password   | VARCHAR(255) | YES  |     |         | 密码      
+ realname   | VARCHAR(255) | YES  |     |         | 姓名      
+ phone      | VARCHAR(255) | YES  |     |         | 手机号     
+ email      | VARCHAR(255) | YES  |     |         | 邮箱      
+ createTime | DATETIME(19) | YES  |     |         | 注册时间    
+ enable     | BIT(1)       | YES  |     |         | 是否有效    
+ sex        | VARCHAR(10)  | YES  |     |         |         
+ updateTime | DATETIME(19) | YES  |     |         |         
+------------+--------------+------+-----+---------+---------
+

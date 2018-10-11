@@ -1,0 +1,59 @@
+#@layerformlayout()
+#define main()
+
+<form data-validator-option="{theme:'bootstrap', timely:2, stopOnError:true}" id="form" class="form-horizontal" role="form" action="admin/user/submit">
+<input type="hidden" name="user.id"  value="#(user.id??)"  />
+	<div class="form-group">
+		<label class="control-label col-sm-2">姓名</label>
+		<div class="col-sm-6">
+			<input type="text" id="realname" data-rule="required;" maxlength="10" class="form-control" value="#(user.realname??)"  name="user.realname" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2">手机号</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" data-rule="required;length(11)" name="user.phone"  value="#(user.phone??)"  />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2">Email</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="user.email"  data-rule="required;" value="#(user.email??)" />
+		</div>
+		<span  style="color:red">#(emailmsg??)</span>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2">性别</label>
+		<div class="col-sm-3">
+		<select  name="user.sex" class="form-control">
+			<option #((user!=nulll&&user.sex=="男")?"selected":"") value="男">男</option>
+			<option #((user!=nulll&&user.sex=="女")?"selected":"") value="女">女</option>
+		</select>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2">用户名</label>
+		<div class="col-sm-6">
+			<input type="text" data-tip="您可以使用手机号或者微信号作为用户名" class="form-control" data-rule="required"  value="#(user.username??)" name="user.username" />
+		</div>
+	</div>
+	#if(user==null||user.id==null)
+		<div class="form-group">
+				<label class="control-label col-sm-2">密码</label>
+				<div class="col-sm-6">
+					<input type="password" class="form-control"  name="user.password" />
+				</div>
+				<span style="color:red">#(passwordmsg??)
+			</div>
+	#end
+	
+</form>
+#end
+#define js()
+<script type="text/javascript">
+function submitThisForm(){
+	$("#form").submit();
+}
+</script>
+#end

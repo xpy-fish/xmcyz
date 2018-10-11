@@ -1,0 +1,29 @@
+#define innerlayout()
+<!DOCTYPE html>
+<html>
+	<head>
+		<base href="#(basepath)">
+		<meta charset="utf-8" />
+		<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<link href="http://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+		<link href="http://cdn.bootcss.com/x-editable/1.5.1/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="assets/css/admin.css"/>
+		#@css?()
+	</head>
+	<body>
+		<div class="cyz_table_container">
+			<div class="container">
+			#@main?()
+			</div>
+		</div>
+	</body>
+	<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/editable/bootstrap-table-editable.min.js"></script>
+	<script src="http://cdn.bootcss.com/x-editable/1.5.1/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+	<script src="http://cdn.bootcss.com/layer/3.0.1/layer.min.js"></script>
+	#@js?()
+</html>
+#end
